@@ -1,0 +1,30 @@
+Python offers a rich set of built-in functions and string methods to manipulate and work with strings. These functions and methods provide various functionalities for tasks like formatting, searching, modifying, and validating strings.
+Commonly Used String Methods:
+Case Conversion:
+upper(): Converts all characters in the string to uppercase.
+lower(): Converts all characters in the string to lowercase.
+capitalize(): Converts the first character of the string to uppercase and the rest to lowercase.
+title(): Converts the first character of each word in the string to uppercase.
+swapcase(): Swaps the case of all characters (uppercase to lowercase, lowercase to uppercase).
+Searching and Finding:
+find(substring): Returns the lowest index of the substring if found, otherwise returns -1.
+index(substring): Similar to find(), but raises a ValueError if the substring is not found.
+count(substring): Returns the number of occurrences of a specified substring.
+startswith(prefix): Returns True if the string starts with the specified prefix, False otherwise. 
+endswith(suffix): Returns True if the string ends with the specified suffix, False otherwise.
+Modification and Manipulation:
+replace(old, new): Returns a new string with all occurrences of old replaced by new.
+strip(): Returns a copy of the string with leading and trailing whitespace removed.
+lstrip(): Removes leading whitespace.
+rstrip(): Removes trailing whitespace.
+split(separator): Splits the string into a list of substrings using the specified separator.
+join(iterable): Concatenates elements of an iterable (e.g., list of strings) into a single string, using the string itself as a separator.
+partition(separator): Splits the string into three parts (before separator, separator, after separator) at the first occurrence of the separator.
+zfill(width): Pads the string with zeros on the left to a specified width.
+Validation (Boolean Methods):
+isalnum(): Returns True if all characters are alphanumeric (letters or numbers).
+isalpha(): Returns True if all characters are alphabetic.
+isdigit(): Returns True if all characters are digits.
+islower(): Returns True if all alphabetic characters are lowercase.
+isupper(): Returns True if all alphabetic characters are uppercase.
+isspace(): Returns True if all characters are whitespace.
