@@ -1,0 +1,83 @@
+so if the function wasn't in a class, why would we not need self
+
+ans:
+
+Great question — and the answer is very simple:
+
+✅ Why standalone functions do NOT need self
+self only exists because methods inside a class belong to an object.
+Example:
+obj.method()
+
+is secretly:
+Class.method(obj)
+
+So Python must pass the object (obj) into the method → that parameter is called self.
+
+🟥 But if the function is NOT inside a class…
+def add(a, b):
+    return a + b
+
+You call it like:
+add(3, 4)
+
+There is no object, so there is nothing to pass as self.
+
+
+No class
+
+
+No instance
+
+
+No need to keep track of an object
+
+
+Nothing to bind a function to
+
+
+So Python does not supply any extra hidden argument.
+
+🔍 Difference in simplest form
+Function inside a class
+class A:
+    def f(self, x):
+        print(self, x)
+
+Calling:
+a = A()
+a.f(10)
+
+Internally becomes:
+A.f(a, 10)
+
+✔ self is required
+✔ It represents the object (a)
+
+Function outside a class
+def f(x):
+    print(x)
+
+Calling:
+f(10)
+
+Internally:
+f(10)
+
+No extra argument → so NO self.
+
+🎯 In short:
+You only need self when Python must keep track of which object a method belongs to.
+In a normal function, nothing needs to be tracked — so no self.
+
+If you want, I can show:
+
+
+why static methods don’t have self
+
+
+how Python actually binds methods internally
+
+
+how self compares to this in Java/C++
+
