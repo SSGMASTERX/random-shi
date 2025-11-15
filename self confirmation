@@ -63,4 +63,125 @@ Without self, everything inside the class would get mixed up.
 self is used to show that the parameters and attributes inside a class belong to that specific instance or object.
 
 
-s
+2) head=Node(values[0]) # create first node current=head # pointer to move through list for v in values[1:]: # loop through remaining values current.next=Node(v) # 
+link new node current=current.next so here head gets self.data and values assigned to it, but in the v in values loop what is the self recognized as for nodes as they aren't really assigned a variable
+ans:
+
+Great question — and this is exactly the part that usually confuses people when learning linked lists in Python.
+Let’s break it down clearly.
+
+✅ Key Idea
+Every time you call:
+Node(v)
+
+Python creates a new object in memory.
+That object has:
+
+
+its own self.data
+
+
+its own self.next
+
+
+But you do NOT have to assign that object to a variable name like n1, n2, n3.
+It still exists because something is pointing to it.
+And who is pointing to it?
+👉 Another node’s next pointer.
+
+⭐ Let’s See It Slowly
+Step 1
+head = Node(values[0])
+current = head
+
+This creates something like:
+Node object A:
+   data = 1
+   next = None
+
+head and current both point to this A.
+
+Step 2 — First iteration of loop
+current.next = Node(v)   # suppose v = 2
+
+This creates a new Node object, call it B:
+Node object B:
+    data = 2
+    next = None
+
+Now the reference chain becomes:
+head → A → B
+
+Even though B does not have a variable name like node2,
+it doesn’t need one — because:
+👉 A’s next attribute holds a reference to B.
+
+Step 3 — Move current
+current = current.next
+
+Now current points to B.
+
+Step 4 — Next iteration
+current.next = Node(v)   # suppose v = 3
+
+This creates node C:
+Node object C:
+    data = 3
+    next = None
+
+Link it:
+A → B → C
+
+Even though C is not stored in a variable like n3, it stays alive because:
+👉 B’s next refers to C.
+
+🔥 Important Concept
+Every Node object knows itself through self
+self is ALWAYS:
+👉 the object being constructed or operated on.
+Example:
+Node(v)
+
+During this call:
+
+
+self refers to the newly created node object
+
+
+even if you never store it in a variable name
+
+
+Only this matters:
+current.next = Node(v)
+
+current.next now holds a reference to that new node, so it stays alive.
+
+🧠 Final Mental Model
+Think of each Node(v) like creating a new box:
+[ data | next ]
+
+You don’t need to name each box.
+Boxes are kept alive because:
+
+
+Some other box’s “next arrow” points to them
+
+
+Or a variable (head, current) points to them
+
+
+As long as something points to the node, Python keeps it in memory.
+
+✔️ Summary
+Q: What is self for new nodes created inside the loop?
+A:
+self refers to the newly created Node object, even if you didn’t store it in a variable name.
+Q: How does Python remember these nodes?
+A:
+Because another node’s next field stores a reference to them.
+Q: Do nodes need variable names (n1, n2, etc.)?
+A:
+No — variable names are optional.
+Linked lists rely on pointers (next), not variable names.
+
+If you want, I can also draw memory diagrams for both variable-labeled nodes and non-labeled nodes to make it even clearer.
