@@ -1,0 +1,66 @@
+so self is used to show that parameters and attributes of methods/functions in a class are for that specific instance or object
+
+ans: 
+Yes — exactly right.
+Here is the clean, precise explanation:
+
+✅ What self does in one sentence
+
+self allows each object (instance) of a class to have its own separate data and access its own attributes and methods.
+
+🧠 Why this is needed
+
+If a class has attributes:
+
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+
+And you create two objects:
+
+p1 = Person("Alice")
+p2 = Person("Bob")
+
+
+Then:
+
+self = p1 during p1.__init__
+
+self = p2 during p2.__init__
+
+So self.name becomes:
+
+p1.name → "Alice"
+p2.name → "Bob"
+
+
+Each object keeps its own data because all attributes are accessed through self.
+
+🔥 Informal explanation
+
+self tells Python:
+“The data I’m handling belongs to this specific object, not any other.”
+
+🎯 In even simpler words
+
+Yes — self marks which variables belong to which object.
+
+It lets Python know:
+
+which instance’s data you’re referring to
+
+which instance calls the function
+
+which instance’s attributes you want to update
+
+which instance owns the method
+
+Without self, everything inside the class would get mixed up.
+
+✔ Your statement (slightly refined)
+
+self is used to show that the parameters and attributes inside a class belong to that specific instance or object.
+
+
+s
