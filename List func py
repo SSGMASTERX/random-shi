@@ -1,0 +1,12 @@
+Methods associated with list objects: These are functions that are called on a specific list object to perform operations on that list. Some common list methods include:
+append(item): Adds an item to the end of the list. 
+extend(iterable): Adds all items from an iterable to the end of the list.
+insert(index, item): Inserts an item at a specified index.
+remove(item): Removes the first occurrence of a specified item.
+pop([index]): Removes and returns the item at a given index (or the last item if no index is specified).
+clear(): Removes all items from the list.
+index(item): Returns the index of the first occurrence of a specified item.
+count(item): Returns the number of times a specified item appears in the list.
+sort(): Sorts the items of the list in place.
+reverse(): Reverses the order of the items in the list in place.
+copy(): Returns a shallow copy of the list.
