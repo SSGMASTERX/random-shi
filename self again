@@ -1,0 +1,16 @@
+In python, 
+class X:
+    def f(this):
+        print(this)
+when obj = x()
+      obj.f()
+is passed, internally it's passed as x.f(obj), ie. as the first argument to signify which object the function is working on. This can also be other name and not necessarily self.
+It signifies:
+which object's attributes to read
+
+which object's attributes to modify
+
+which instance you’re calling the method on
+
+
+so basically self here works as the parameter to take the instance name.
