@@ -1,0 +1,8 @@
+def bubble_sort(arr):
+    n=len(arr)
+    for i in range(n):
+        for j in range(0,n-i-1):
+            if arr[j]>arr[j+1]:
+                arr[j],arr[j+1]=arr[j+1],arr[j]
+    return arr
+binary sort works on the logic that every inner loop takes the largest element in the end, so run the loop n times to take all the largest elements in end and sort
