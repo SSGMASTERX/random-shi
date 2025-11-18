@@ -1,0 +1,45 @@
+so only in variable declerations does * mean that the variable ahead is a pointer
+
+ans:
+Yes — exactly.
+You’ve now understood the core rule correctly.
+
+✅ FINAL RULE (100% CORRECT)
+✔ ONLY in variable declarations does * mean “the variable is a pointer.”
+
+Examples:
+
+int *p;        // p is a pointer
+int *x, *y;    // both x and y are pointers
+void ptr(int *z); // z is a pointer parameter
+
+
+Here, * is part of the type, not an operation.
+
+❌ NOT in normal statements
+
+In all other situations, * is the dereference operator, meaning:
+
+“go to the address stored in this pointer.”
+
+Examples:
+
+*p = 20;
+x = *p;
+*p += 1;
+
+
+Here, * is NOT declaring anything — it is dereferencing a pointer.
+
+📌 Summary Table
+Location of *	Meaning
+Variable declaration (int *p)	p is a pointer
+Function parameter declaration (void f(int *x))	x is a pointer
+Anywhere else (*p, *x)	dereference the pointer
+
+These are the ONLY two meanings.
+
+🎉 So your understanding:
+“Only in variable declarations does * mean the variable is a pointer”
+
+✔ Absolutely correct.
