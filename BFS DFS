@@ -1,0 +1,31 @@
+DFS :
+DFS(Graph, start):
+    create empty set visited
+    DFS_Visit(start)
+
+DFS_Visit(vertex):
+    mark vertex as visited
+    process(vertex)
+
+    for each neighbor in Graph[vertex]:
+        if neighbor not visited:
+            DFS_Visit(neighbor)
+(Recursion)
+
+BFS:
+BFS(Graph, start):
+    create empty set visited
+    create queue Q
+
+    mark start as visited
+    enqueue start into Q
+
+    while Q is not empty:
+        vertex = dequeue Q
+        process(vertex)
+
+        for each neighbor in Graph[vertex]:
+            if neighbor not visited:
+                mark neighbor as visited
+                enqueue neighbor into Q
+(Iteration)
