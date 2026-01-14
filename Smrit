@@ -1,0 +1,3 @@
+softmax classifier assigns a numerical value based on its prediction using deep cnn v2 model to each class. Sum of these values is 1.
+For training, the model for each class in train data processes all the images and attributes their tensor dimensions, patterns and noise and similarities with that specific class. When this data is used on a selected image according to the matches each class is assigned
+a probability in the softmax classifier as the numerical value. The highest value is then predicted as the class for that image and that value is shown as the confidence score.
