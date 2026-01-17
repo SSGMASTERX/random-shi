@@ -10,7 +10,7 @@ DFS_Visit(vertex):
     for each neighbor in Graph[vertex]:
         if neighbor not visited:
             DFS_Visit(neighbor)
-(Recursion)
+(Recursion), Stack based
 
 BFS:
 BFS(Graph, start):
@@ -28,4 +28,4 @@ BFS(Graph, start):
             if neighbor not visited:
                 mark neighbor as visited
                 enqueue neighbor into Q
-(Iteration)
+(Iteration), Queue Based
